@@ -15,8 +15,7 @@ return new class extends Migration
             $table->integer('id_user', true);
             $table->string('username');
             $table->string('password');
-            $table->integer('level');
-            $table->integer('id_session');
+            $table->enum('role', ['customer', 'admin', 'owner']);
         });
     }
 

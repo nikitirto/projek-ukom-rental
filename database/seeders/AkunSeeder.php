@@ -15,11 +15,9 @@ class AkunSeeder extends Seeder
     public function run(): void
     {
         DB::table('tbl_user')->insert([
-            'id_user' => 1,
-            'username' => 'awok',
+            'username' => 'admin',
             'password' => Hash::make('123'),
-            'level' => 1,
-            'id_session' => 1
+            'role' => 'admin'
         ]);
     }
 }

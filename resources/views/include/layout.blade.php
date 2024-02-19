@@ -35,34 +35,40 @@
                 <h1><a href="index.html" class="logo"><img src="{{ asset('img/Car_.png') }}" alt=""
                             style="width: 40px">&nbsp; Rental Mobil</a></h1>
                 <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="{{ url('data-user') }}"><img src="{{ asset('img/person_icon_.png') }}" alt=""
-                                style="width: 30px"> &nbsp; User</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('data-customer') }}"><img src="{{ asset('img/customer.png') }}" alt=""
-                                style="width: 30px"> &nbsp; Customer</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('data-kondisi') }}"><img src="{{ asset('img/car_inspection.png') }}"
-                                alt="" style="width: 30px"> &nbsp; Data Kondisi</a>
-                    </li>
+                    @if (Auth::check() && Auth::user()->role == 'admin' || Auth::user()->role == 'owner')
+                        <li class="active">
+                            <a href="{{ url('data-user') }}"><img src="{{ asset('img/person_icon_.png') }}"
+                                    alt="" style="width: 30px"> &nbsp; User</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('data-customer') }}"><img src="{{ asset('img/customer.png') }}"
+                                    alt="" style="width: 30px"> &nbsp; Customer</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('data-kondisi') }}"><img src="{{ asset('img/car_inspection.png') }}"
+                                    alt="" style="width: 30px"> &nbsp; Data Kondisi</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('data-sewa') }}"><img src="{{ asset('img/car-rent.png') }}" alt=""
+                                    style="width: 25px;"> &nbsp; Data Sewa</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('data-rekening') }}"><img src="{{ asset('img/icon _Coins_.png') }}"
+                                    alt="" style="width: 25px;"> &nbsp; Data Rekening</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('data-servis') }}"><img src="{{ asset('img/car-service.png') }}"
+                                    alt="" style="width: 25px;">
+                                &nbsp; Data Servis</a>
+                        </li>
+                    @endif
                     <li>
                         <a href="{{ url('data-mobil') }}"><img src="{{ asset('img/Car_.png') }}" alt=""
                                 style="width: 30px"> &nbsp; Data Mobil</a>
                     </li>
                     <li>
-                        <a href="{{ url('data-sewa') }}"><img src="{{ asset('img/car-rent.png') }}" alt=""
-                                style="width: 25px;"> &nbsp; Data Sewa</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('data-rekening') }}"><img src="{{ asset('img/icon _Coins_.png') }}"
-                                alt="" style="width: 25px;"> &nbsp; Data Rekening</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('data-servis') }}"><img src="{{ asset('img/car-service.png') }}"
-                                alt="" style="width: 25px;">
-                            &nbsp; Data Servis</a>
+                        <a href="{{ url('logout') }}"><img src="{{ asset('img/Car_.png') }}" alt=""
+                                style="width: 30px"> &nbsp; Logout</a>
                     </li>
                 </ul>
             </nav>

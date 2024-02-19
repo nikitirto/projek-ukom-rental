@@ -37,16 +37,15 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="level">Level</label><br>
-                                            <input type="number" class="form-control border" name="level" id="level"
-                                                autocomplete="off" required="required" placeholder="ketik">
+                                            <label for="role">Role</label><br>
+                                            <select name="role" id="role" class="form-control border">
+                                                <option hidden>Pilih Role</option>
+                                                <option value="owner">Owner</option>
+                                                <option value="admin">Admin</option>
+                                                <option value="customer">Customer</option>
+                                            </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="id_session">ID Session</label><br>
-                                            <input type="number" class="form-control border" name="id_session"
-                                                id="id_session" autocomplete="off" required="required" placeholder="ketik">
-                                        </div>
 
                                         <div class="form-group">
                                             <div class="col-md-12">
