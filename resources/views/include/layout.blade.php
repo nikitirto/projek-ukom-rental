@@ -41,6 +41,10 @@
                                     alt="" style="width: 30px"> &nbsp; User</a>
                         </li>
                         <li>
+                            <a href="{{ url('data-admin') }}"><img src="{{ asset('img/admin.png') }}"
+                                    alt="" style="width: 30px"> &nbsp; Admin</a>
+                        </li>
+                        <li>
                             <a href="{{ url('data-customer') }}"><img src="{{ asset('img/customer.png') }}"
                                     alt="" style="width: 30px"> &nbsp; Customer</a>
                         </li>
@@ -67,7 +71,7 @@
                                 style="width: 30px"> &nbsp; Data Mobil</a>
                     </li>
                     <li>
-                        <a href="{{ url('logout') }}"><img src="{{ asset('img/Car_.png') }}" alt=""
+                        <a href="{{ url('logout') }}"><img src="{{ asset('img/logout.png') }}" alt=""
                                 style="width: 30px"> &nbsp; Logout</a>
                     </li>
                 </ul>

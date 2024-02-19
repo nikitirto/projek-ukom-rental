@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SessionController;
-use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\data_kondisiController;
 use App\Http\Controllers\data_mobilController;
 use App\Http\Controllers\data_userController;
@@ -10,6 +8,7 @@ use App\Http\Controllers\data_rekeningController;
 use App\Http\Controllers\data_servisController;
 use App\Http\Controllers\data_sewaController;
 use App\Http\Controllers\data_customerController;
+use App\Http\Controllers\data_adminController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -31,6 +30,17 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['akses:admin,owner'])->group(function () {
         // DATA USER
         Route::get('data-user', [data_userController::class, 'index']);
+        Route::post('data-user/simpan', [data_userController::class, 'store']);
+        Route::get('data-user/edit/{id}', [data_userController::class, 'edit']);
+        Route::post('data-user/edit/simpan', [data_userController::class, 'update']);
+        Route::delete('data-user/hapus', [data_userController::class, 'destroy']);
+
+        // DATA ADMIN
+        Route::get('data-admin', [data_adminController::class, 'index']);
+        Route::post('data-admin/simpan', [data_adminController::class, 'store']);
+        Route::get('data-admin/edit/{id}', [data_adminController::class, 'edit']);
+        Route::post('data-admin/edit/simpan', [data_adminController::class, 'update']);
+        Route::delete('data-admin/hapus', [data_adminController::class, 'destroy']);
 
         // DATA KONDISI
         Route::get('data-kondisi', [data_kondisiController::class, 'index']);
