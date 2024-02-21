@@ -1,5 +1,6 @@
 @extends('include.layout')
 @section('content')
+
     <div id="wrapper">
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -74,6 +75,10 @@
                                 <div class="card-body">
                                     <table class="table table-bordered DataTable border" cellspacing="0">
                                         <thead>
+                                            {{-- <form action="" method="GET">
+                                                <input type="text" name="query" placeholder="Cari...">
+                                                <button type="submit">Cari</button>
+                                            </form> --}}
                                             <tr>
                                                 <th>No</th>
                                                 <th>ID Servis</th>

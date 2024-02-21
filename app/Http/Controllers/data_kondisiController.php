@@ -126,4 +126,8 @@ class data_kondisiController extends Controller
 
         return response()->json($pesan);
     }
+    public function search(Request $request)
+    {
+             
+    }
 }

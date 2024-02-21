@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\tbl_user;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -14,10 +14,22 @@ class AkunSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('tbl_user')->insert([
-            'username' => 'admin',
-            'password' => Hash::make('123'),
-            'role' => 'admin'
-        ]);
+        $userData = [
+            [
+                'username' => 'customer',
+                'role' => 'customer',
+                'password' => Hash::make('123')
+            ],
+            [
+                'username' => 'admin',
+                'role' => 'admin',
+                'password' => Hash::make('123')
+            ],
+        ];
+
+        // looping data dengan foreach
+        foreach ($userData as $val) {
+            tbl_user::create($val);
+        }
     }
 }

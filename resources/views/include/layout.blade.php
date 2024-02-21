@@ -35,7 +35,7 @@
                 <h1><a href="index.html" class="logo"><img src="{{ asset('img/Car_.png') }}" alt=""
                             style="width: 40px">&nbsp; Rental Mobil</a></h1>
                 <ul class="list-unstyled components">
-                    @if (Auth::check() && Auth::user()->role == 'admin' || Auth::user()->role == 'owner')
+                    @if (Auth::check() && Auth::user()->role == 'admin')
                         <li class="active">
                             <a href="{{ url('data-user') }}"><img src="{{ asset('img/person_icon_.png') }}"
                                     alt="" style="width: 30px"> &nbsp; User</a>
@@ -52,10 +52,13 @@
                             <a href="{{ url('data-kondisi') }}"><img src="{{ asset('img/car_inspection.png') }}"
                                     alt="" style="width: 30px"> &nbsp; Data Kondisi</a>
                         </li>
+                        @endif
+                        @if (Auth::check() && Auth::user()->role == 'customer')
                         <li>
                             <a href="{{ url('data-sewa') }}"><img src="{{ asset('img/car-rent.png') }}" alt=""
                                     style="width: 25px;"> &nbsp; Data Sewa</a>
                         </li>
+                        
                         <li>
                             <a href="{{ url('data-rekening') }}"><img src="{{ asset('img/icon _Coins_.png') }}"
                                     alt="" style="width: 25px;"> &nbsp; Data Rekening</a>
@@ -65,11 +68,12 @@
                                     alt="" style="width: 25px;">
                                 &nbsp; Data Servis</a>
                         </li>
-                    @endif
+                    
                     <li>
                         <a href="{{ url('data-mobil') }}"><img src="{{ asset('img/Car_.png') }}" alt=""
                                 style="width: 30px"> &nbsp; Data Mobil</a>
                     </li>
+                    @endif
                     <li>
                         <a href="{{ url('logout') }}"><img src="{{ asset('img/logout.png') }}" alt=""
                                 style="width: 30px"> &nbsp; Logout</a>
